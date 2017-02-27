@@ -8,7 +8,7 @@ class InstallJS
     /**
      * @var array
      */
-    protected $installFilesArray = array('jellymouldfrontend.js', 'jellymouldpage.js', 'spectrum.js');
+    protected static $installFilesArray = array('frontend'=>'jellymouldfrontend.js', 'admin'=>'jellymouldpage.js', 'spectrum'=>'spectrum.js');
 
     /**
      * InstallJS constructor.
@@ -23,7 +23,7 @@ class InstallJS
 
     protected function installFiles($jellymouldFrontendJSDirectory = null)
     {
-        foreach ($this->installFilesArray as $file) {
+        foreach (self::$installFilesArray as $file) {
             $jSpath = __DIR__ . '/../js/' . $file;
             $srcExists = file_exists($jSpath);
             if (isset($jellymouldFrontendJSDirectory) && $srcExists) {
@@ -35,5 +35,6 @@ class InstallJS
             }
         }
     }
+
 
 }
