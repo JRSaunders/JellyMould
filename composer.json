@@ -1,0 +1,20 @@
+{
+  "name": "jrsaunders/jellymould",
+  "description": "Create & Design Web pages",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "John Saunders",
+      "email": "john@yettimedia.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "JellyMould\\": "src/"
+    }
+  }
+}
