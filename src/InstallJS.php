@@ -28,8 +28,10 @@ class InstallJS
             $srcExists = file_exists($jSpath);
             if (isset($jellymouldFrontendJSDirectory) && $srcExists) {
                 $writePath = $jellymouldFrontendJSDirectory . $file;
-                $jSData = file_get_contents($jSpath);
-                file_put_contents($writePath, $jSData);
+                if (!file_exists($writePath)) {
+                    $jSData = file_get_contents($jSpath);
+                    file_put_contents($writePath, $jSData);
+                }
             }
         }
     }
